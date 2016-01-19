@@ -9,7 +9,7 @@ This sample takes advantage of transpiling the code using **Ctrl+B** on Windows 
 * [Sublime Text](http://www.sublimetext.com/3)
 * [BabelJS](https://babeljs.io/)
 
-Please refer to the book for configuring Sublime for build the samples provided.
+Please refer to the **Setup** section for configuring Sublime for build the samples provided.
 
 ## Platform Support
 
@@ -29,3 +29,8 @@ The samples provided use BabelJS as the transpiler.  These need to be installed 
 ## Running The Examples
 
 To run the examples, you simply need to press **Ctrl+B** on Windows or **Cmd+B** on Mac.  You will see the output of transpiling the code in the output window in Sublime.
+
+##Setup
+The following are the steps required to configure Sublime Text to automatically build and test your validations:
+
+[Setup](https://github.com/mattduffield/es6-succinctly/blob/master/doc/setup.md)
