@@ -1,5 +1,4 @@
-[1, 2, 3].includes(2);     // true
-[1, 2, 3].includes(4);     // false
-[1, 2, 3].includes(3, 3);  // false
-[1, 2, 3].includes(3, -1); // true
-[1, 2, NaN].includes(NaN); // true
+let nodes = document.querySelectorAll(".business");
+nodes.forEach((item, index, arr) => {
+  console.log(item.name);
+});

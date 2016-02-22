@@ -1,13 +1,13 @@
-const TOKEN = /\s*(\+|[0-9]+)\s*/y;
+var text = 'First line\nsecond line';
+var regex = /^(\S+) line\n?/y;
 
-function tokenize(TOKEN_REGEX, str) {
-  let result = [];
-  let match;
-  while (match = TOKEN_REGEX.exec(str)) {
-    result.push(match[1]);
-  }
-  return result;
-}
-    
-let result = tokenize(TOKEN, '3 + 4');
-console.log(JSON.stringify(result));
+var match = regex.exec(text);
+console.log(match[1]);        // logs 'First'
+console.log(regex.lastIndex); // logs '11'
+
+var match2 = regex.exec(text);
+console.log(match2[1]);       // logs 'Second'
+console.log(regex.lastIndex); // logs '22'
+
+var match3 = regex.exec(text);
+console.log(match3 === null); // logs 'true'

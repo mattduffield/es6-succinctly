@@ -1,6 +1,6 @@
-'abc'.repeat(-1);   // RangeError
-'abc'.repeat(0);    // ''
-'abc'.repeat(1);    // 'abc'
-'abc'.repeat(2);    // 'abcabc'
-'abc'.repeat(2.5);  // 'abcabc' (count will be converted to integer)
-'abc'.repeat(1/0);  // RangeError
+var str = 'If you can dream it, you can do it.';
+console.log(str.includes('If you can'));       // true
+console.log(str.includes('it.'));    // true
+console.log(str.includes('nonexistent')); // false
+console.log(str.includes('If you can', 1));    // false
+console.log(str.includes('IF YOU'));       // false

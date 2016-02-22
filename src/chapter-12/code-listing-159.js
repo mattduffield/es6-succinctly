@@ -1,8 +1,9 @@
 let map = new Map();
-map.set('foo', true);
-map.set('bar', false);
+    
+map.set('foo', 123);
+console.log(map.get('foo'));
+console.log(map.has('foo'));
 
-console.log(map.size);
-map.clear();
-console.log(map.size);
+console.log(map.delete('foo'));
+console.log(map.has('foo'));
 

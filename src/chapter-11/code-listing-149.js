@@ -1,11 +1,16 @@
-function* range (start, end, step) {
-  while (start < end) {
-    yield start;
-    start += step;
+let fibonacci = {
+  *[Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    for (;;) {
+      [ pre, cur ] = [ cur, pre + cur ];
+      yield cur;
+    }
   }
 }
 
-for (let i of range(0, 10, 2)) {
-  console.log(i);
+for (let n of fibonacci) {
+  if (n > 100)
+    break;
+  console.log(n);
 }
 

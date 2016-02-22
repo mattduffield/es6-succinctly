@@ -1,4 +1,2 @@
-var str = 'To be, or not to be, that is the question.';
-console.log(str.endsWith('question.')); // true
-console.log(str.endsWith('to be'));     // false
-console.log(str.endsWith('to be', 19)); // true
+'ABC'.codePointAt(1);          // 66
+'\uD800\uDC00'.codePointAt(0); // 65536

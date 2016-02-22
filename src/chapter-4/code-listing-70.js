@@ -1,3 +1,3 @@
-let square = (num) => {
+var square = (function(num) {
   return num * num;
-};
+}).bind(this);

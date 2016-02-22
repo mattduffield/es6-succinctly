@@ -1,10 +1,18 @@
-import {Animal} from './code-listing-130';
-
-export class AnimalClient {
-  constructor() {
-    this.animal = new Animal("dog");
-    this.animal.toString();
+export class Animal {
+  constructor(name) {
+    this.name = name;
+    this.color = "brown";
+  }
+  get color() { 
+    return this._color;
+  }
+  set color(value) {
+    this._color = value;
+  }
+  toString() {
+    return console.log(`I am a ${this.name}.  I am ${this.color} in color.`);
+  }
+  static echo(input) {
+    console.log(input);
   }
 }
-
-let ac = new AnimalClient();

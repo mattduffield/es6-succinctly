@@ -1,8 +1,5 @@
-[1, 2, 3].fill(4);               // [4, 4, 4]
-[1, 2, 3].fill(4, 1);            // [1, 4, 4]
-[1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]
-[1, 2, 3].fill(4, 1, 1);         // [1, 2, 3]
-[1, 2, 3].fill(4, -3, -2);       // [4, 2, 3]
-[1, 2, 3].fill(4, NaN, NaN);     // [1, 2, 3]
-Array(3).fill(4);                // [4, 4, 4]
-[].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
+var arr = ['a', 'b', 'c'];
+var eArr = arr.entries();
+console.log(eArr.next().value); // [0, 'a']
+console.log(eArr.next().value); // [1, 'b']
+console.log(eArr.next().value); // [2, 'c']

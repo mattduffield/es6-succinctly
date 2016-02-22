@@ -1,6 +1,4 @@
-var str = 'To be, or not to be, that is the question.';
-console.log(str.includes('To be'));       // true
-console.log(str.includes('question'));    // true
-console.log(str.includes('nonexistent')); // false
-console.log(str.includes('To be', 1));    // false
-console.log(str.includes('TO BE'));       // false
+var str = 'If you dream it, you can do it.';
+console.log(str.startsWith('If you'));         // true
+console.log(str.startsWith('you can do'));     // false
+console.log(str.startsWith('you can do', 17)); // true

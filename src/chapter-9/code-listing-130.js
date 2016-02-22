@@ -1,18 +1,19 @@
 export class Animal {
   constructor(name) {
     this.name = name;
-    this.color = "brown";
   }
-  get color() { 
-    return this._color;
-  }
-  set color(value) {
-    this._color = value;
-  }
-  toString() {
-    return console.log(`I am a ${this.name}.  I am ${this.color} in color.`);
+  greeting(sound) {
+    return `A ${this.name} ${sound}`;
   }
   static echo(input) {
     console.log(input);
+  }
+}
+export class Canine extends Animal {
+  constructor() {
+    super("canine");
+  }
+  static echo() {
+    super.echo("bow wow");
   }
 }

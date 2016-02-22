@@ -1,10 +1,5 @@
-let map = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three']
-]);
-
-for (let key of map.keys()) {
-  console.log(key);
-}	
+let map = new Map()
+  .set(1, 'one')
+  .set(2, 'two')
+  .set(3, 'three');
 

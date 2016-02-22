@@ -1,11 +1,9 @@
-let xhr = new XMLHttpRequest();
-xhr.open('GET', someUrl);
-xhr.responseType = 'arraybuffer';
-  
-xhr.onload = function () {
-  let arrayBuffer = xhr.response;
+let fileInput = document.getElementById('fileInput');
+let file = fileInput.files[0];
+let reader = new FileReader();
+reader.readAsArrayBuffer(file);
+reader.onload = function () {
+  let arrayBuffer = reader.result;
   // process the buffer...
 };
-  
-xhr.send();
 

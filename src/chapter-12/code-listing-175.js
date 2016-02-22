@@ -1,8 +1,7 @@
 let set = new Set();
 set.add('red');
-set.add('green');
 
-console.log(set.size);
-set.clear();
-console.log(set.size);
+console.log(set.has('red'));
+set.delete('red');
+console.log(set.has('red'));
 

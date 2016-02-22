@@ -1,3 +1,7 @@
-import sum from './code-listing-116';
-
-console.log('2 + 3 = ' + sum(2, 3));
+export default function sum(x, y) {
+  return x + y;
+}
+function notAvailable() {
+	console.log("You can't call me...");
+}
+export var pi = 3.141593;

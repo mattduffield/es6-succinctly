@@ -1,17 +1,11 @@
-let fibonacci = function* (numbers) {
-  let pre = 0, cur = 1;
-  while (numbers-- > 0) {
-    [ pre, cur ] = [ cur, pre + cur ];
-    yield cur;
+function* range (start, end, step) {
+  while (start < end) {
+    yield start;
+    start += step;
   }
 }
 
-for (let n of fibonacci(5))
-  console.log(n);
-
-let numbers = [ ...fibonacci(5) ];
-console.log(numbers);;
-
-let [ n1, n2, n3, ...others ] = fibonacci(5);
-console.log(others[0]);
+for (let i of range(0, 10, 2)) {
+  console.log(i);
+}
 

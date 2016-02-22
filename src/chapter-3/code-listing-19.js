@@ -1,3 +1,3 @@
 let first = "john";
 let last = "doe";
-let obj = {first, last};
+let obj = {first: first, last: last};

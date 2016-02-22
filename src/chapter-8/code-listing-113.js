@@ -1,6 +1,3 @@
-function sum(x, y) {
-  return x + y;
-}
-var pi = 3.141593; 
+import {add, pi} from './code-listing-112';
 
-export { sum, pi}
+console.log("2 pi = " + add(pi, pi));

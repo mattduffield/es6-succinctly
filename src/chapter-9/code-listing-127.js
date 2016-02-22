@@ -1,11 +1,11 @@
-import {Animal} from './code-listing-126';
-
-export class AnimalClient {
-  constructor() {
-    this.animal = new Animal("Dog");
-    console.log(this.animal.greeting("barks"));
+export class Animal {
+  constructor(name) {
+    this.name = name;
   }
+  greeting(sound) {
+    return `A ${this.name} ${sound}`;
+  }
+  static echo(input) {
+    console.log(input);
+  }	
 }
-
-let ac = new AnimalClient();
-Animal.echo("roof, roof");

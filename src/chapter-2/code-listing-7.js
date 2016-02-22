@@ -1,11 +1,3 @@
-var submit = function() {
-  var x = "foo";
-  
-  if (x == "foo") {
-    var y = "bar";
-  }
-  console.log(x);
-  console.log(y);
-}
-
-submit();
+const PI = 3.141593;
+PI = 22;
+console.log(PI);

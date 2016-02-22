@@ -1,4 +1,4 @@
-Array.of(1);             // [1]
-Array.of(1, 2, 3);       // [1, 2, 3]
-Array.of("a", 7, 12.5);  // ["a", 7, 12.5]
-Array.of(undefined);     // [undefined]
+var string = 'A\uD835\uDC68';
+var strIter = string[Symbol.iterator]();
+console.log(strIter.next().value); // "A"
+console.log(strIter.next().value); // "\uD835\uDC68"

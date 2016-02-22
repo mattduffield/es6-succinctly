@@ -1,12 +1,46 @@
-class GeneratorClass {
-  * sampleFunc() {
-    console.log('First');
-    yield;
-    console.log('Second'); 
-  }
+function async (proc, ...params) {
+  var iterator = proc(...params);
+  return new Promise((resolve, reject) => {
+    let loop = (value) => {
+      let result;
+      try {
+        result = iterator.next(value);
+      }
+      catch (err) {
+        reject(err);
+      }
+      if (result.done) {
+        resolve(result.value);
+      }
+      else if (typeof result.value === "object"
+        && typeof result.value.then === "function")
+        result.value.then((value) => {
+          loop(value);
+        }, (err) => {
+          reject(err);
+        })
+      else {
+        loop(result.value);        
+      }
+    };
+    loop();
+  })
 }
-let gc = new GeneratorClass();
-let gen = gc.sampleFunc();
-console.log(gen.next());
-console.log(gen.next());
+
+//  application-specific asynchronous builder
+function makeAsync (text, after) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(text), after);
+  })
+}
+
+//  application-specific asynchronous procedure
+async(function* (greeting) {
+  let foo = yield makeAsync("foo", 300);
+  let bar = yield makeAsync("bar", 200);
+  let baz = yield makeAsync("baz", 100);
+  return `${greeting} ${foo} ${bar} ${baz}`;
+}, "Hello").then((msg) => {
+  console.log(msg);
+});
 

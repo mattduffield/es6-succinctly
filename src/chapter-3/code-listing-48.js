@@ -1,5 +1,3 @@
-var arr = ['a', 'b', 'c'];
-var eArr = arr.entries();
-console.log(eArr.next().value); // [0, 'a']
-console.log(eArr.next().value); // [1, 'b']
-console.log(eArr.next().value); // [2, 'c']
+[1, 2, 3, 4, 5].copyWithin(0, 3);      // [4, 5, 3, 4, 5]
+[1, 2, 3, 4, 5].copyWithin(0, 3, 4);   // [4, 2, 3, 4, 5]
+[1, 2, 3, 4, 5].copyWithin(0, -2, -1); // [4, 2, 3, 4, 5]

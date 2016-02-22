@@ -1,4 +1,3 @@
-import {sum as add, pi} from './code-listing-113';
-export {sum as add, pi} from './code-listing-113';
+import {sum as add, pi} from './code-listing-114';
 
-console.log("2 π = " + add(pi, pi));
+console.log("2 pi = " + add(pi, pi));

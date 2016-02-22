@@ -1,7 +1,4 @@
-export default function sum(x, y) {
-  return x + y;
-}
-function notAvailable() {
-	console.log("You can't call me...");
-}
-export var pi = 3.141593;
+import {sum as add, pi} from './code-listing-114';
+export {sum as add, pi} from './code-listing-114';
+
+console.log("2 pi = " + add(pi, pi));

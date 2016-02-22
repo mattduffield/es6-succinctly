@@ -1,2 +1,2 @@
-'ABC'.codePointAt(1);          // 66
-'\uD800\uDC00'.codePointAt(0); // 65536
+String.fromCodePoint(42);      // *
+String.fromCodePoint(65, 90);  // AZ

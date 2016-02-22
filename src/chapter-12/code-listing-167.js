@@ -4,7 +4,7 @@ let map = new Map([
   [3, 'three']
 ]);
 
-for (let [key, value] of map.entries()) {
-  console.log(key, value);
+for (let value of map.values()) {
+  console.log(value);
 }
 

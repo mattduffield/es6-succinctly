@@ -1,5 +1,4 @@
-let set = new Set(['red', 'green', 'blue']);
-for (let x of set) {
-  console.log(x);
-}
+let set = new Set([NaN]);
+console.log(set.size);
+console.log(set.has(NaN));
 

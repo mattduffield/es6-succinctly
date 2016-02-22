@@ -1,46 +1,17 @@
-function async (proc, ...params) {
-  var iterator = proc(...params);
-  return new Promise((resolve, reject) => {
-    let loop = (value) => {
-      let result;
-      try {
-        result = iterator.next(value);
-      }
-      catch (err) {
-        reject(err);
-      }
-      if (result.done) {
-        resolve(result.value);
-      }
-      else if (typeof result.value === "object"
-        && typeof result.value.then === "function")
-        result.value.then((value) => {
-          loop(value);
-        }, (err) => {
-          reject(err);
-        })
-      else {
-        loop(result.value);        
-      }
-    };
-    loop();
-  })
+let fibonacci = function* (numbers) {
+  let pre = 0, cur = 1;
+  while (numbers-- > 0) {
+    [ pre, cur ] = [ cur, pre + cur ];
+    yield cur;
+  }
 }
 
-//  application-specific asynchronous builder
-function makeAsync (text, after) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(text), after);
-  })
-}
+for (let n of fibonacci(5))
+  console.log(n);
 
-//  application-specific asynchronous procedure
-async(function* (greeting) {
-  let foo = yield makeAsync("foo", 300);
-  let bar = yield makeAsync("bar", 200);
-  let baz = yield makeAsync("baz", 100);
-  return `${greeting} ${foo} ${bar} ${baz}`;
-}, "Hello").then((msg) => {
-  console.log(msg);
-});
+let numbers = [ ...fibonacci(5) ];
+console.log(numbers);;
+
+let [ n1, n2, n3, ...others ] = fibonacci(5);
+console.log(others[0]);
 
